@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LLM Fraud Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-900 text-white">
+
+    <div class="flex">
+
+        <!-- SIDEBAR -->
+        <div class="w-64 h-screen bg-slate-800 p-6">
+            <h1 class="text-2xl font-bold mb-10">🛡 Fraud AI</h1>
+
+            <ul class="space-y-4">
+                <li class="hover:text-cyan-400 cursor-pointer">Dashboard</li>
+                <li class="hover:text-cyan-400 cursor-pointer">Transactions</li>
+                <li class="hover:text-cyan-400 cursor-pointer">Alerts</li>
+                <li class="hover:text-cyan-400 cursor-pointer">AI Insights</li>
+            </ul>
+        </div>
+
+        <!-- MAIN -->
+        <div class="flex-1 p-10">
+
+            <h2 class="text-3xl font-bold mb-8">
+                LLM Powered Fraud Detection System
+            </h2>
+
+            <!-- METRIC CARDS -->
+            <div class="grid grid-cols-4 gap-6">
+
+                <div class="bg-slate-800 p-6 rounded-3xl hover:scale-105 transition">
+                    <p class="text-gray-400">Transactions</p>
+                    <h1 class="text-3xl font-bold">12,430</h1>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-3xl hover:scale-105 transition">
+                    <p class="text-gray-400">Frauds</p>
+                    <h1 class="text-3xl font-bold text-red-400">342</h1>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-3xl hover:scale-105 transition">
+                    <p class="text-gray-400">Risk Score</p>
+                    <h1 class="text-3xl font-bold text-yellow-400">87%</h1>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-3xl hover:scale-105 transition">
+                    <p class="text-gray-400">Alerts</p>
+                    <h1 class="text-3xl font-bold">29</h1>
+                </div>
+
+            </div>
+
+            <!-- CHART -->
+            <canvas id="fraudChart" class="mt-12"></canvas>
+
+            <script>
+                const ctx = document.getElementById('fraudChart');
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                        datasets: [{
+                            label: 'Fraud Cases',
+                            data: [3, 7, 4, 9, 5],
+                            borderColor: 'cyan',
+                            tension: .4
+                        }]
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
