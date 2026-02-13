@@ -42,3 +42,4 @@ git clone https://github.com/dishasharma23-prog/LLM-fraud-detection.git
 cd LLM-fraud-detection
 npm install
 npm start
+testing auto jenkins trigger
