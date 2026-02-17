@@ -7,7 +7,7 @@ client = MongoClient('mongodb://localhost:27017/')
 
 # --- THE CRITICAL FIX: Use the lowercase database name ---
 db = client['fraud_detection'] 
-# ---------------------------------------------------------
+
 
 collection = db['transactions']
 
