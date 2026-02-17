@@ -17,7 +17,6 @@
             color: #e2e8f0;
         }
 
-        /* Floating Glass Effect */
         .glass-panel {
             background: rgba(18, 18, 24, 0.7);
             backdrop-filter: blur(25px);
@@ -36,37 +35,27 @@
 
 <body class="min-h-screen p-6">
     <div class="flex gap-6 h-[calc(100vh-3rem)] max-w-[1600px] mx-auto">
-
         <aside class="w-72 glass-panel rounded-[2.5rem] flex flex-col p-8 neon-purple-glow">
             <div class="flex items-center gap-3 mb-14">
                 <div
                     class="w-10 h-10 bg-gradient-to-br from-fuchsia-600 to-indigo-600 rounded-xl shadow-[0_0_15px_rgba(192,38,211,0.5)]">
                 </div>
-                <h1 class="text-lg font-bold tracking-tight">FRAUD DETECTION AI</h1>
+                <h1 class="text-lg font-bold tracking-tight">NEURALGUARD AI</h1>
             </div>
-
             <nav class="flex-1">
                 <ul class="space-y-4">
                     <li
                         class="flex items-center gap-3 bg-white/5 text-fuchsia-400 p-4 rounded-2xl border border-white/5 cursor-pointer">
-                        <span class="w-2 h-2 bg-fuchsia-500 rounded-full shadow-[0_0_8px_#d946ef]"></span>
-                        Dashboard
+                        <span class="w-2 h-2 bg-fuchsia-500 rounded-full shadow-[0_0_8px_#d946ef]"></span> Dashboard
                     </li>
                     <li
                         class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer">
-                        Alerts
-                    </li>
+                        Alerts</li>
                     <li
                         class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer">
-                        Transactions
-                    </li>
-                    <li
-                        class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer">
-                        AI Insights
-                    </li>
+                        Transactions</li>
                 </ul>
             </nav>
-
             <div class="mt-auto pt-6 border-t border-white/5">
                 <div class="bg-indigo-500/10 p-4 rounded-2xl border border-indigo-500/20">
                     <p class="text-[10px] uppercase text-indigo-400 font-bold mb-2 tracking-widest">Model Health</p>
@@ -78,168 +67,88 @@
         </aside>
 
         <main class="flex-1 flex flex-col gap-6 overflow-y-auto pr-2">
-
             <header class="flex justify-between items-center mb-2">
                 <div>
                     <h2 class="text-4xl font-bold tracking-tight">LLM Fraud Detection</h2>
                     <p class="text-slate-500 text-sm mt-1 flex items-center gap-2">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        Test monitoring from 12 edge nodes
+                        Monitoring 284,807 Live Transactions
                     </p>
                 </div>
-
-                <div class="flex items-center gap-4 relative" id="profile-container">
-                    <div class="flex bg-white/5 p-1 rounded-full border border-white/5 mr-2">
+                <div class="flex items-center gap-4">
+                    <div class="flex bg-white/5 p-1 rounded-full border border-white/5">
                         <button
-                            class="p-2 px-4 text-[10px] font-bold text-slate-400 hover:text-white transition">Live</button>
-                        <button
-                            class="p-2 px-4 text-[10px] font-bold bg-white/10 text-white rounded-full shadow-lg">Static</button>
-                    </div>
-
-                    <button onclick="toggleDropdown()" class="group relative">
-                        <div
-                            class="absolute -inset-1 bg-gradient-to-tr from-fuchsia-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500">
-                        </div>
-                        <div
-                            class="relative w-12 h-12 bg-[#1a1a24] border border-white/10 rounded-2xl flex items-center justify-center overflow-hidden">
-                            <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                        </div>
-                    </button>
-
-                    <div id="profile-menu"
-                        class="hidden absolute right-0 top-16 w-56 glass-panel rounded-[1.5rem] p-4 neon-purple-glow z-50 border border-white/10">
-                        <div class="px-2 py-3 border-b border-white/5 mb-2">
-                            <p class="text-xs font-bold text-white">Admin Node #01</p>
-                            <p class="text-[10px] text-fuchsia-400 font-medium">admin@neuralguard.ai</p>
-                        </div>
-                        <ul class="space-y-1">
-                            <li
-                                class="p-2 text-xs text-slate-400 hover:bg-white/5 hover:text-white rounded-xl transition cursor-pointer flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-                                    </path>
-                                </svg>
-                                Settings
-                            </li>
-                            <li
-                                class="p-2 text-xs text-red-400 hover:bg-red-500/10 rounded-xl transition cursor-pointer flex items-center gap-2 font-bold">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                                    </path>
-                                </svg>
-                                Sign Out
-                            </li>
-                        </ul>
+                            class="p-2 px-4 text-[10px] font-bold bg-white/10 text-white rounded-full shadow-lg">Live</button>
+                        <button class="p-2 px-4 text-[10px] font-bold text-slate-400">Static</button>
                     </div>
                 </div>
             </header>
 
-            <div class="grid grid-cols-4 gap-6">
-                <div class="glass-panel p-6 rounded-[2rem] hover:border-fuchsia-500/30 transition duration-500">
+            <div class="grid grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-[2rem]">
                     <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-4">Total Transactions
                     </p>
-                    <h3 class="text-3xl font-bold">12,430</h3>
-                    <div class="mt-4 text-[10px] text-green-400 font-bold">↑ 12.5% vs last week</div>
+                    <h3 id="total-transactions" class="text-3xl font-bold">Loading...</h3>
                 </div>
-                <div class="glass-panel p-6 rounded-[2rem] hover:border-red-500/30 transition duration-500">
+                <div class="glass-panel p-6 rounded-[2rem]">
                     <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-4">Frauds Detected</p>
-                    <h3 class="text-3xl font-bold text-red-500">342</h3>
-                    <div class="mt-4 text-[10px] text-red-400/60 font-bold uppercase tracking-tighter">Critical Priority
-                    </div>
+                    <h3 id="frauds-detected" class="text-3xl font-bold text-red-500">0</h3>
                 </div>
-                <div class="glass-panel p-6 rounded-[2rem] hover:border-fuchsia-500/30 transition duration-500">
+                <div class="glass-panel p-6 rounded-[2rem]">
                     <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-4">Global Risk Score</p>
-                    <h3 class="text-3xl font-bold">87%</h3>
+                    <h3 id="risk-score" class="text-3xl font-bold">0%</h3>
                     <div class="w-full bg-white/5 h-1.5 rounded-full mt-5">
-                        <div
-                            class="bg-gradient-to-r from-fuchsia-500 to-indigo-500 h-full w-[87%] rounded-full shadow-[0_0_10px_rgba(192,38,211,0.5)]">
+                        <div id="risk-bar"
+                            class="bg-gradient-to-r from-fuchsia-500 to-indigo-500 h-full w-[0%] rounded-full shadow-[0_0_10px_#d946ef]">
                         </div>
                     </div>
-                </div>
-                <div class="glass-panel p-6 rounded-[2rem] hover:border-fuchsia-500/30 transition duration-500">
-                    <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-4">Active Alerts</p>
-                    <h3 class="text-3xl font-bold">29</h3>
-                    <div
-                        class="mt-4 px-3 py-1 bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-lg text-[10px] text-fuchsia-400 w-fit font-bold uppercase tracking-tighter">
-                        Requires Action</div>
                 </div>
             </div>
 
             <div class="glass-panel p-8 rounded-[2.5rem] flex-1 relative min-h-[400px]">
-                <div class="flex justify-between items-center mb-8">
-                    <h4 class="text-xl font-bold">LLM Fraud Detection Trend</h4>
-                    <div
-                        class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 cursor-pointer">
-                        <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
+                <h4 class="text-xl font-bold mb-8">LLM Fraud Detection Trend</h4>
                 <div class="absolute bottom-10 left-10 right-10 top-24">
                     <canvas id="fraudChart"></canvas>
                 </div>
             </div>
-
         </main>
     </div>
 
     <script>
-        // Profile Dropdown Toggle
-        function toggleDropdown() {
-            const menu = document.getElementById('profile-menu');
-            menu.classList.toggle('hidden');
-        }
+        // Data Syncing Logic
+        async function updateDashboard() {
+            try {
+                const response = await fetch('http://localhost:5000/api/stats');
+                const data = await response.json();
 
-        // Close dropdown when clicking outside
-        window.onclick = function (event) {
-            if (!event.target.closest('#profile-container')) {
-                const menu = document.getElementById('profile-menu');
-                if (!menu.classList.contains('hidden')) {
-                    menu.classList.add('hidden');
-                }
+                document.getElementById('total-transactions').innerText = data.totalTransactions.toLocaleString();
+                document.getElementById('frauds-detected').innerText = data.fraudsDetected.toLocaleString();
+                document.getElementById('risk-score').innerText = data.globalRiskScore + '%';
+                document.getElementById('risk-bar').style.width = data.globalRiskScore + '%';
+            } catch (err) {
+                console.error("Dashboard Sync Error:", err);
             }
         }
 
-        // Chart.js Configuration
-        const ctx = document.getElementById('fraudChart').getContext('2d');
-        const purpleGrad = ctx.createLinearGradient(0, 0, 0, 400);
-        purpleGrad.addColorStop(0, 'rgba(168, 85, 247, 0.3)');
-        purpleGrad.addColorStop(1, 'rgba(168, 85, 247, 0)');
+        setInterval(updateDashboard, 5000);
+        updateDashboard();
 
+        // Chart Setup
+        const ctx = document.getElementById('fraudChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['18:10', '18:20', '19:10', '20:10', '21:10', '22:10', '23:10', '00:10'],
+                labels: ['18:10', '19:10', '20:10', '21:10', '22:10', '23:10', '00:10'],
                 datasets: [{
-                    data: [25, 38, 18, 55, 42, 60, 90, 70],
+                    data: [25, 45, 30, 60, 40, 85, 70],
                     borderColor: '#a855f7',
                     borderWidth: 4,
                     fill: true,
-                    backgroundColor: purpleGrad,
-                    tension: 0.45,
-                    pointRadius: 0,
-                    pointHoverRadius: 6,
-                    pointHoverBackgroundColor: '#a855f7',
-                    pointHoverBorderColor: '#fff',
-                    pointHoverBorderWidth: 2
+                    backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                    tension: 0.4
                 }]
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { grid: { display: false }, ticks: { color: '#475569', font: { size: 10 } } },
-                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: '#475569', font: { size: 10 } } }
-                }
-            }
+            options: { maintainAspectRatio: false, plugins: { legend: { display: false } } }
         });
     </script>
 </body>
