@@ -28,28 +28,26 @@ pipeline {
     post {
 
         success {
-            emailext(
-                subject: "NeuralGuard Build ${currentBuild.currentResult}",
-                body: "Build URL: ${env.BUILD_URL}",
-                to: "disha.sharma2607@gmail.com"
-            )
-        }
+    emailext(
+        subject: "NeuralGuard Build ${currentBuild.currentResult}",
+        body: "Build URL: ${env.BUILD_URL}",
+        to: "disha.sharma2607@gmail.com",
+        recipientProviders: []
+    )
+}
 
         failure {
-            emailext(
-                subject: "❌ NeuralGuard CI/CD FAILURE - Build #${env.BUILD_NUMBER}",
-                body: """
-                <h2 style="color:red;">Build Failed 🚨</h2>
-
-                <b>Project:</b> NeuralGuard<br>
-                <b>Build Number:</b> ${env.BUILD_NUMBER}<br>
-                <b>Status:</b> ${currentBuild.currentResult}<br>
-                <b>Check Logs:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a><br>
-                """,
-                mimeType: 'text/html',
-                to: "disha.sharma2607@gmail.com"
-            )
-        }
+    emailext(
+        subject: "❌ NeuralGuard CI/CD FAILURE - Build #${env.BUILD_NUMBER}",
+        body: """
+        <h2 style="color:red;">Build Failed 🚨</h2>
+        <b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>
+        """,
+        mimeType: 'text/html',
+        to: "${RECIPIENTS}",
+        recipientProviders: []
+    )
+}
 
         always {
             echo "Pipeline execution completed."
