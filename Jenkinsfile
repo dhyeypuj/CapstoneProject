@@ -19,7 +19,7 @@ pipeline {
                 emailext (
                     subject: "NeuralGuard CI/CD: Build ${currentBuild.currentResult}",
                     body: "The build was successful! Check the Stage View here: ${env.BUILD_URL}",
-                    to: "disha.sharma2607@gmail.com, dhyeypuj@gmail.com"
+                    to: "disha.sharma23@st.niituniversity.in, dhyey.pujara23@st.niituniversity.in, adwitiya.sinha23@sst,niituniversity.in, akanksha.joshi23@st.niituniversity.in"
                 )
             }
         }
