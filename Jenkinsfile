@@ -45,7 +45,7 @@ pipeline {
                 <b>Check Logs:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a><br>
                 """,
                 mimeType: 'text/html',
-                to: "disha.sharma23@st.niituniversity.in, adwitiya.sinha23@st.niituniversity.in"
+                to: "disha.sharma23@st.niituniversity.in"
             )
         }
 
