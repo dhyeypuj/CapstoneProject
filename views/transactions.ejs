@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction History | NeuralGuard AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050507;
+            color: #e2e8f0;
+        }
+
+        .glass-panel {
+            background: rgba(18, 18, 24, 0.7);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+
+<body class="p-8">
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-10 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Predictive Modeling History</h1>
+            <button onclick="location.href='/dashboard'" class="px-6 py-2 bg-indigo-600 rounded-xl font-bold">Back to
+                Dashboard</button>
+        </header>
+
+        <div class="glass-panel rounded-3xl overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-white/5 text-[10px] uppercase text-slate-400">
+                    <tr>
+                        <th class="p-6">Transaction</th>
+                        <th class="p-6">Classification</th>
+                        <th class="p-6">Model Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% transactions.forEach(tx=> { %>
+                        <tr class="border-b border-white/5">
+                            <td class="p-6">ID: <span class="text-slate-400">
+                                    <%= tx._id %>
+                                </span><br>$<%= tx.Amount %>
+                            </td>
+                            <td class="p-6">
+                                <span class="<%= tx.isFraud ? 'text-red-500' : 'text-green-500' %> font-bold">
+                                    <%= tx.isFraud ? 'FRAUD' : 'NORMAL' %>
+                                </span>
+                            </td>
+                            <td class="p-6 font-mono">
+                                <%= tx.riskScore %>%
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

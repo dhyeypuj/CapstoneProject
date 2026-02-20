@@ -44,18 +44,23 @@
             </div>
             <nav class="flex-1">
                 <ul class="space-y-4">
-                    <li
-                        class="flex items-center gap-3 bg-white/5 text-fuchsia-400 p-4 rounded-2xl border border-white/5 cursor-pointer">
+                    <li onclick="location.href='/dashboard'"
+                        class="flex items-center gap-3 bg-white/5 text-fuchsia-400 p-4 rounded-2xl border border-white/5 cursor-pointer transition hover:bg-white/10">
                         <span class="w-2 h-2 bg-fuchsia-500 rounded-full shadow-[0_0_8px_#d946ef]"></span> Dashboard
                     </li>
-                    <li
-                        class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer">
-                        Alerts</li>
-                    <li
-                        class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer">
-                        Transactions</li>
+
+                    <li onclick="location.href='/alerts'"
+                        class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer hover:bg-white/5">
+                        Alerts
+                    </li>
+
+                    <li onclick="location.href='/transactions'"
+                        class="flex items-center gap-3 text-slate-500 hover:text-slate-200 p-4 rounded-2xl transition cursor-pointer hover:bg-white/5">
+                        Transactions
+                    </li>
                 </ul>
             </nav>
+
             <div class="mt-auto pt-6 border-t border-white/5">
                 <div class="bg-indigo-500/10 p-4 rounded-2xl border border-indigo-500/20">
                     <p class="text-[10px] uppercase text-indigo-400 font-bold mb-2 tracking-widest">Model Health</p>
@@ -72,7 +77,7 @@
                     <h2 class="text-4xl font-bold tracking-tight">LLM Fraud Detection</h2>
                     <p class="text-slate-500 text-sm mt-1 flex items-center gap-2">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        Monitoring 284,807 Live Transactions
+                        Monitoring Live Transactions
                     </p>
                 </div>
                 <div class="flex items-center gap-4">
@@ -114,43 +119,8 @@
         </main>
     </div>
 
-    <script>
-        // Data Syncing Logic
-        async function updateDashboard() {
-            try {
-                const response = await fetch('http://localhost:5000/api/stats');
-                const data = await response.json();
-
-                document.getElementById('total-transactions').innerText = data.totalTransactions.toLocaleString();
-                document.getElementById('frauds-detected').innerText = data.fraudsDetected.toLocaleString();
-                document.getElementById('risk-score').innerText = data.globalRiskScore + '%';
-                document.getElementById('risk-bar').style.width = data.globalRiskScore + '%';
-            } catch (err) {
-                console.error("Dashboard Sync Error:", err);
-            }
-        }
-
-        setInterval(updateDashboard, 5000);
-        updateDashboard();
-
-        // Chart Setup
-        const ctx = document.getElementById('fraudChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['18:10', '19:10', '20:10', '21:10', '22:10', '23:10', '00:10'],
-                datasets: [{
-                    data: [25, 45, 30, 60, 40, 85, 70],
-                    borderColor: '#a855f7',
-                    borderWidth: 4,
-                    fill: true,
-                    backgroundColor: 'rgba(168, 85, 247, 0.1)',
-                    tension: 0.4
-                }]
-            },
-            options: { maintainAspectRatio: false, plugins: { legend: { display: false } } }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
 </body>
 
 </html>
