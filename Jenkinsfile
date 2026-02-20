@@ -38,7 +38,7 @@ pipeline {
                 <b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a><br>
                 """,
                 mimeType: 'text/html',
-                to: "disha.sharma23@st.niituniversity.in"
+                to: "disha.sharma2607@gmail.com"
             )
         }
 
