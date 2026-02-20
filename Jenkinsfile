@@ -8,12 +8,11 @@ pipeline {
             }
         }
         stage('Docker Build') {
-            steps {
-                // This simulates the Docker build stage for your presentation
-                echo 'Building Docker container for NeuralGuard...'
-                sh 'docker --version' 
-            }
-        }
+    steps {
+        echo 'Building Docker container for NeuralGuard...'
+        bat 'docker --version' // Changed from 'sh' to 'bat' for Windows
+    }
+}
         stage('Email Alert') {
             steps {
                 echo 'Sending automated build notification to the team...'
