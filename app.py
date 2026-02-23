@@ -11,7 +11,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Load models
+# Load modelsss
 rf_model = joblib.load("models/random_forest_model.pkl")
 threshold = joblib.load("models/threshold.pkl")
 
